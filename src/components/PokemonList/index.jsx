@@ -32,8 +32,7 @@ const PokemonList = () => {
         <StyledList>
            {pokemons?.length > 0 && pokemons.map((pokemon) => (
                <PokemonCard name={pokemon.name} />
-           ))}
-          
+           ))}          
         </StyledList>
       </ThemeContainer>
     </>

@@ -7,4 +7,19 @@ export const StyledHeader = styled.header`
         padding: 0;
         color: #fff;
     }   
+
+    ${(props) => props.fixed && css`
+        position: fixed;
+        width: 100%;
+        z-index: 1001;
+        animation: fadeIn .6s forwards;
+    `}
+
+    @keyframes fadeIn{
+        from{
+            opacity: 0;
+        } to {
+            opacity: 1;
+        }
+    }
 `
