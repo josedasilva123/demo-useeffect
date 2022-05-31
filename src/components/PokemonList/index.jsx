@@ -13,10 +13,10 @@ import api from "../../data/api";
 /* GET */
 
 const PokemonList = () => {
-  const [ loading, setLoading ] = useState(true); // estado de loading
-  const [ pokemonList, setPokemonList ] = useState([]); // estado para receber a lista pokémon
+  const [loading, setLoading] = useState(true); // estado de loading
+  const [pokemonList, setPokemonList] = useState([]); // estado para receber a lista pokémon
 
-  // Efeito de montagem 
+  // Efeito de montagem
   useEffect(() => {
     // Começa o carregamento
     setLoading(true);
@@ -26,16 +26,17 @@ const PokemonList = () => {
     Finally: encerra o carregamento 
     */
 
-    api.get('pokemon?limit=20&offset=0')    
-    .then((res) => {
-      setPokemonList(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-    .finally(() => {
-      setLoading(false);
-    })
+    api
+      .get("pokemon?limit=20&offset=0")
+      .then((res) => {
+        setPokemonList(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
     /*
     fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
@@ -44,26 +45,23 @@ const PokemonList = () => {
       setPokemonList(json.results);
     })
     */
-
   }, []);
-  
 
   return (
     <>
       <Header />
       <button onClick={() => console.log(pokemonList)}>Testar</button>
       <ThemeContainer>
-        { /* Renderização condicional de loading */}
+        {/* Renderização condicional de loading */}
         {loading ? (
           <span>Carregando...</span>
         ) : (
           <StyledList>
-          {pokemonList?.results?.map(pokemon => (
-            <PokemonCard name={pokemon.name} key={pokemon.name}/>
-          ))}       
-        </StyledList>
+            {pokemonList?.results?.map((pokemon) => (
+              <PokemonCard name={pokemon.name} key={pokemon.name} />
+            ))}
+          </StyledList>
         )}
-        
       </ThemeContainer>
     </>
   );
