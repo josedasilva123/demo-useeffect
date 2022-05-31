@@ -1,5 +1,6 @@
 import "./App.css";
 import Counter from "./components/Counter";
+import PokemonList from "./components/PokemonList";
 import { GlobalStyle } from "./styles/globals";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Counter />
+      <PokemonList />
     </div>
   );
 }
