@@ -11,11 +11,26 @@ const authApi = axios.create({
 })
 */
 
+const BASE_URL = "https://pokeapi.co/api/v2/"
 //Rotas publicas 
 //Criando uma configuração base para API com axios
 const api = axios.create({
-    baseURL: "https://pokeapi.co/api/v2/",
+    baseURL: BASE_URL,
     timeout: 15000,
 })
+
+/* 
+    Função recebe um URL em string (com a base: https://pokeapi.co/api/v2/) 
+    e retorna uma URL limpa sem a base.
+
+    Ex:
+    recebe: https://pokeapi.co/api/v2/avidaefeliz
+    retorna: avidaefeliz
+*/
+
+export function clearBaseURL(url){
+    const newUrl = url.replace(BASE_URL, "");
+    return newUrl;
+}
 
 export default api;

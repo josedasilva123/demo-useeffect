@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyledCard } from './styles'
 
-const PokemonCard = ({name}) => {
+const PokemonCard = ({name, onClick}) => {
   return (
-    <StyledCard>
+    <StyledCard onClick={onClick}>
         <h3>{name}</h3>
     </StyledCard>        
   )
