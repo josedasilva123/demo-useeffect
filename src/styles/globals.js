@@ -16,4 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         list-style: none;
     }
+    img{
+        max-width: 100%;
+    }
 `
