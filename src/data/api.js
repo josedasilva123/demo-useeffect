@@ -11,7 +11,8 @@ const authApi = axios.create({
 })
 */
 
-const BASE_URL = "https://pokeapi.co/api/v2/"
+const BASE_URL = "https://pokeapi.co/api/v2/" //String e variavel para facilitar futura manutenção
+
 //Rotas publicas 
 //Criando uma configuração base para API com axios
 const api = axios.create({
