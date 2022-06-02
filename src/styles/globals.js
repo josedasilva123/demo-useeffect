@@ -62,7 +62,7 @@ export const ThemeButton = styled.button`
     //Caso não esteja
     else {
       return css`
-        border: 2px solid red;
+        border: 2px solid ${props.color || 'red'};
         color: #000;
 
         &:hover {
