@@ -21,7 +21,6 @@ const Counter = () => {
   useEffect(() => {
     //Cada vez que o counter atualiza, mando o valor para EXAMPLE_COUNTER no localStorage
     localStorage.setItem("EXAMPLE_COUNTER", counter);
-    console.log("Ativo efeito");
   }, [counter]);
 
   return (
