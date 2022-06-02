@@ -135,7 +135,7 @@ const PokemonList = () => {
               */ }    
 
               <StyledList>
-                {pokemonPage?.results?.map((pokemon) => (
+                {pokemonPage && pokemonPage.results?.map((pokemon) => (
                   <PokemonCard key={pokemon.name} name={pokemon.name} onClick={() => loadPokemon(pokemon.url)} />
                 ))}
               </StyledList>
