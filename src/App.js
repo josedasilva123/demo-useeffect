@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-
       <FlexRow justifyContent="center">
         <ThemeButton color="blue" onClick={() => setModal(!modal)}>
           Abrir Modal
